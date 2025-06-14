@@ -3,6 +3,8 @@ import requests
 from typing import Dict, Any
 import re
 
+API_URL = "https://ideas-test.onrender.com"
+
 # Configure the page
 st.set_page_config(
     page_title="College Admission Chatbot",
@@ -82,7 +84,7 @@ if user_input:
     # Get bot response
     try:
         response = requests.post(
-            "http://localhost:8000/query",
+            f"{API_URL}/query",
             json={"question": user_input}
         )
         response_data = response.json()
